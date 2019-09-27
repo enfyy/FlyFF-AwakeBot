@@ -1,8 +1,10 @@
 # Modified Version
 This is a modified version of the Awakebot for this specific Awake Feature shown in this Screenshot:
 ![alt text](https://i.gyazo.com/479277b5cd75e7317b9ec6a7bef90271.png "Feature")
+
 Only works if you dont use the highlight awake feature that is available with this particular awaking method.
-I won't upload a binary so you will have to build this yourself ;)
+I won't upload a binary so you will have to build this yourself or use the original one since it already works for 
+this feautre just not quite as well.
 
 # Flyff Awakebot
 Flyff Awakebot is a software designed to do the awakening for you!
