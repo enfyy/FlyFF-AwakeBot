@@ -22,20 +22,22 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProcessSelector));
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources =
+                new System.ComponentModel.ComponentResourceManager(typeof(ProcessSelector));
             this.ButtonSelectProcess = new System.Windows.Forms.Button();
             this.ListViewProcesses = new System.Windows.Forms.ListView();
-            this.colName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colPid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colWndTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colName = new System.Windows.Forms.ColumnHeader();
+            this.colPid = new System.Windows.Forms.ColumnHeader();
+            this.colWndTitle = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
             // 
             // ButtonSelectProcess
             // 
-            this.ButtonSelectProcess.Location = new System.Drawing.Point(12, 267);
+            this.ButtonSelectProcess.Location = new System.Drawing.Point(14, 308);
             this.ButtonSelectProcess.Name = "ButtonSelectProcess";
-            this.ButtonSelectProcess.Size = new System.Drawing.Size(524, 23);
+            this.ButtonSelectProcess.Size = new System.Drawing.Size(611, 27);
             this.ButtonSelectProcess.TabIndex = 0;
             this.ButtonSelectProcess.Text = "Select";
             this.ButtonSelectProcess.UseVisualStyleBackColor = true;
@@ -43,16 +45,14 @@
             // 
             // ListViewProcesses
             // 
-            this.ListViewProcesses.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colName,
-            this.colPid,
-            this.colWndTitle});
+            this.ListViewProcesses.Columns.AddRange(new System.Windows.Forms.ColumnHeader[]
+                {this.colName, this.colPid, this.colWndTitle});
             this.ListViewProcesses.FullRowSelect = true;
             this.ListViewProcesses.HideSelection = false;
-            this.ListViewProcesses.Location = new System.Drawing.Point(12, 12);
+            this.ListViewProcesses.Location = new System.Drawing.Point(14, 14);
             this.ListViewProcesses.MultiSelect = false;
             this.ListViewProcesses.Name = "ListViewProcesses";
-            this.ListViewProcesses.Size = new System.Drawing.Size(524, 249);
+            this.ListViewProcesses.Size = new System.Drawing.Size(611, 287);
             this.ListViewProcesses.TabIndex = 1;
             this.ListViewProcesses.UseCompatibleStateImageBehavior = false;
             this.ListViewProcesses.View = System.Windows.Forms.View.Details;
@@ -74,19 +74,18 @@
             // 
             // ProcessSelector
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 299);
+            this.ClientSize = new System.Drawing.Size(639, 345);
             this.Controls.Add(this.ListViewProcesses);
             this.Controls.Add(this.ButtonSelectProcess);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ProcessSelector";
-            this.Text = "greyb1t\'s Flyff Awakebot - Process Selector";
+            this.Text = "Select the Flyff Process";
             this.Load += new System.EventHandler(this.ProcessSelector_Load);
             this.ResumeLayout(false);
-
         }
 
         #endregion

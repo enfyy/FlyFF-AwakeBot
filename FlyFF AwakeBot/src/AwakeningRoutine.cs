@@ -130,18 +130,6 @@ namespace FlyFF_AwakeBot
                     {
                         var stopWatch = Stopwatch.StartNew();
 
-                        MouseSimulator.SetCursorPosition(new Point(_botConfig.ItemPosition.X + 3, _botConfig.ItemPosition.Y));
-
-                        Thread.Sleep(50);
-
-                        MouseSimulator.SetCursorPosition(new Point(_botConfig.ItemPosition.X - 3, _botConfig.ItemPosition.Y));
-
-                        Thread.Sleep(50);
-
-                        // Hover over the item to check the awake
-                        MouseSimulator.SetCursorPosition(_botConfig.ItemPosition);
-
-
                         // Add specified delay to compensate for laggy server
                         int delayBeforeSnapshot = 0;
 
@@ -231,46 +219,43 @@ namespace FlyFF_AwakeBot
                         AppendLog("Preferred awake was not achieved");
 
                         // Doubleclick reversion scroll
-                        MouseSimulator.LeftClick(_botConfig.Process.Handle, _botConfig.ReversionPosition);
-                        MouseSimulator.LeftClick(_botConfig.Process.Handle, _botConfig.ReversionPosition);
+                        //MouseSimulator.LeftClick(_botConfig.Process.Handle, _botConfig.ReversionPosition);
+                        //MouseSimulator.LeftClick(_botConfig.Process.Handle, _botConfig.ReversionPosition);
 
-                        int ms = 200;
+                        int ms = 1000;
 
+                        //wait one second
                         Thread.Sleep(ms);
 
                         // Click item with reversion
-                        MouseSimulator.LeftClick(_botConfig.Process.Handle, _botConfig.ItemPosition);
+                        //MouseSimulator.LeftClick(_botConfig.Process.Handle, _botConfig.ItemPosition);
 
                         // Wait until the reversion is done on the item
-                        Thread.Sleep(_serverConfig.ScrollFinishDelay);
+                        //Thread.Sleep(_serverConfig.ScrollFinishDelay);
+                     
+                        //Move Mouse to the Awake Button.
+                        MouseSimulator.SetCursorPosition(new Point(_botConfig.AwakeScrollPosition.X - 3, _botConfig.AwakeScrollPosition.Y));
 
-                        if (_ui.ComboBoxSupportAugmentation.Checked)
-                        {
-                            MouseSimulator.LeftClick(_botConfig.Process.Handle, _botConfig.AwakeScrollPosition);
-                        }
-                        else
-                        {
-                            // Doubleclick awake scroll
-                            MouseSimulator.LeftClick(_botConfig.Process.Handle, _botConfig.AwakeScrollPosition);
-                            MouseSimulator.LeftClick(_botConfig.Process.Handle, _botConfig.AwakeScrollPosition);
-                        }
+                        Thread.Sleep(50);
+                        //Press Awake Button
+                        MouseSimulator.LeftClick(_botConfig.Process.Handle, _botConfig.AwakeScrollPosition);
 
-                        Thread.Sleep(ms);
+                        //Thread.Sleep(ms);
 
                         // Click item with awake scroll
-                        MouseSimulator.LeftClick(_botConfig.Process.Handle, _botConfig.ItemPosition);
+                        //MouseSimulator.LeftClick(_botConfig.Process.Handle, _botConfig.ItemPosition);
 
-                        Thread.Sleep(ms);
+                        //Thread.Sleep(ms);
 
-                        MouseSimulator.SetCursorPosition(new Point(_botConfig.ItemPosition.X + 200, _botConfig.ItemPosition.Y + 200));
+                        //MouseSimulator.SetCursorPosition(new Point(_botConfig.ItemPosition.X + 200, _botConfig.ItemPosition.Y + 200));
 
-                        Thread.Sleep(ms);
+                        //Thread.Sleep(ms);
 
-                        MouseSimulator.SetCursorPosition(_botConfig.ItemPosition);
+                        //MouseSimulator.SetCursorPosition(_botConfig.ItemPosition);
 
 
                         // Wait until the awake is done on the item
-                        Thread.Sleep(_serverConfig.ScrollFinishDelay);
+                        //Thread.Sleep(_serverConfig.ScrollFinishDelay);
 
                         bmp.Dispose();
 

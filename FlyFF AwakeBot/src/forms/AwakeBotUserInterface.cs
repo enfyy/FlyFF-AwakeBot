@@ -28,11 +28,9 @@ namespace FlyFF_AwakeBot
         private void AwakeBotUserInterfaceLoad(object sender, EventArgs e)
         {
             Text = Globals.BotWindowName;
-
+            
             // Remove thse annoying double border from buttons when focus is occured
-            ButtonItemPosition.GotFocus += (s, ev) => { ((Button)s).NotifyDefault(false); };
             ButtonAwakeScrollPosition.GotFocus += (s, ev) => { ((Button)s).NotifyDefault(false); };
-            ButtonReversionScrollPosition.GotFocus += (s, ev) => { ((Button)s).NotifyDefault(false); };
             ButtonSelectAwakeRect.GotFocus += (s, ev) => { ((Button)s).NotifyDefault(false); };
 
             AddPositionButtonsMouseUpEvent();
@@ -65,30 +63,12 @@ namespace FlyFF_AwakeBot
 
         private void AddPositionButtonsMouseUpEvent()
         {
-            ButtonItemPosition.MouseUp += (s, ev) =>
-            {
-                if (TrySetAwakePosition((Control)s))
-                {
-                    _botConfig.ItemPosition = Cursor.Position;
-                    LabelItemPosition.Text = _botConfig.ItemPosition.ToString();
-                }
-            };
-
             ButtonAwakeScrollPosition.MouseUp += (s, ev) =>
             {
                 if (TrySetAwakePosition((Control)s))
                 {
                     _botConfig.AwakeScrollPosition = Cursor.Position;
                     LabelAwakePosition.Text = _botConfig.AwakeScrollPosition.ToString();
-                }
-            };
-
-            ButtonReversionScrollPosition.MouseUp += (s, ev) =>
-            {
-                if (TrySetAwakePosition((Control)s))
-                {
-                    _botConfig.ReversionPosition = Cursor.Position;
-                    LabelReversionPosition.Text = _botConfig.ReversionPosition.ToString();
                 }
             };
         }
@@ -255,9 +235,7 @@ namespace FlyFF_AwakeBot
                         return;
                     }
 
-                    if (_botConfig.ItemPosition == Point.Empty ||
-                        _botConfig.AwakeScrollPosition == Point.Empty ||
-                        _botConfig.ReversionPosition == Point.Empty)
+                    if (_botConfig.AwakeScrollPosition == Point.Empty)
                     {
                         Display.Error("Set all of the item and scroll positions before starting the bot!");
                         return;
@@ -349,6 +327,11 @@ namespace FlyFF_AwakeBot
             }
 
             IsDebugSidebarVisible = !IsDebugSidebarVisible;
+        }
+
+        private void LabelMsDelay_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
