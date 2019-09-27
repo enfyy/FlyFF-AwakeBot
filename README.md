@@ -1,3 +1,7 @@
+# Modified Version
+This is a modified version of the Awakebot for this specific Awake Feature shown in this Screenshot:
+![alt text](https://i.gyazo.com/479277b5cd75e7317b9ec6a7bef90271.png "Feature")
+
 # Flyff Awakebot
 Flyff Awakebot is a software designed to do the awakening for you!
 
